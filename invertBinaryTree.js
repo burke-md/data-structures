@@ -2,9 +2,14 @@
 Return a mirror image of the input
 */ 
 
-//Steps for iterative approach
-//-Create queue. Initial queue w/ root node.
+//Steps for iterative approach (BFS style traversal)
+//-Create queue. Initiate queue w/ root node.
 //-Remove node from queue(dequeue).
 //-Use helper function to swap child nodes.
 //-Add child nodes to queue.
 //-Continue until the queue is empty
+
+//Steps for recursive approach (DFS style traversal)
+//-Define base case, if tree is null, return.
+//-Swap children nodes (use helper function)
+//-Call function recursively passing in child node X2 (left & right)
