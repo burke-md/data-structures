@@ -12,10 +12,19 @@ class LinkedList {
     this.tail = null;
   }
   setHead(node) {
-    this.head = node;
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+      return;
+    }
+    //Call insertBerfore here when code is complete.
   }
   setTail(node) {
-    this.tail = node;
+    if (!this.tail) {
+      this.setHead(node);
+      return;
+    }
+    //Call insertAfter here when code is complete.
   }
   insertBefore(node, nodeToInsert) {}
   insertAfter(node, nodeToInsert) {}
