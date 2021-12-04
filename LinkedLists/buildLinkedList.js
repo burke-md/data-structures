@@ -11,8 +11,12 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
-  setHead(node) {}
-  setTail(node) {}
+  setHead(node) {
+    this.head = node;
+  }
+  setTail(node) {
+    this.tail = node;
+  }
   insertBefore(node, nodeToInsert) {}
   insertAfter(node, nodeToInsert) {}
   insertAt(node, index) {}
