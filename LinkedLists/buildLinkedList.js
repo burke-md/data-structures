@@ -39,7 +39,18 @@ class LinkedList {
     }
     node.prev = nodeToInsert;
   }
-  insertAfter(node, nodeToInsert) {}
+  insertAfter(node, nodeToInsert) {
+    if (nodeToInsert == this.head && nodeToInsert === this.tail) return;
+    this.remove(nodeToInsert);
+    nodeToInsert.prev = node;
+    nodeToInsert.next = node.next;
+    if (node.next === null){
+      this.tail = nodeToInsert;
+    } else {
+      node.next.prev = nodeToInsert;
+    }
+    node.next = nodeToInsert;
+  }
   insertAt(node, index) {}
   remove(node) {}
   containsNodeWithValue(value) {}
