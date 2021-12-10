@@ -57,5 +57,10 @@ class LinkedList {
     if (node === this.tail) this.tail = this.tail.prev;
     this.removeNodeBindings(node);
   }
-  containsNodeWithValue(value) {}
+  containsNodeWithValue(value) {
+    let node = this.head;
+    while (node !== null && node.value !== value) node = node.next;
+    return node !== null;
+  }
+
 }
