@@ -62,5 +62,7 @@ class LinkedList {
     while (node !== null && node.value !== value) node = node.next;
     return node !== null;
   }
-
+  removeNodeBindings(){
+    
+  }
 }
