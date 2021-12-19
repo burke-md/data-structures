@@ -51,7 +51,8 @@ class LinkedList {
     }
     node.next = nodeToInsert;
   }
-  insertAt(node, index) {}
+  insertAtPostion(node, index) {}
+  removeNodeWithValue(){}
   remove(node) {
     if (node === this.head) this.head = this.head.next;
     if (node === this.tail) this.tail = this.tail.prev;
