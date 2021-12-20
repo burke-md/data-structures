@@ -52,7 +52,14 @@ class LinkedList {
     node.next = nodeToInsert;
   }
   insertAtPostion(node, index) {}
-  removeNodeWithValue(){}
+  removeNodeWithValue(value){
+    let node = this.head;
+    while (node !== null){
+      const nodeToRemove = node;
+      node = node.next;
+      if(nodeToRemove.value === value) this.remove(nodeToRemove);
+    }
+  }
   remove(node) {
     if (node === this.head) this.head = this.head.next;
     if (node === this.tail) this.tail = this.tail.prev;
