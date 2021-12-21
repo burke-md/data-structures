@@ -31,8 +31,8 @@ class LinkedList {
     this.remove(nodeToInsert);
     nodeToInsert.prev = node.prev;
     nodeToInsert.next = node;
-    
-    if(node.prev === null) {
+
+    if (node.prev === null) {
       this.head = nodeToInsert;
     } else {
       node.prev.next = nodeToInsert;
@@ -44,20 +44,33 @@ class LinkedList {
     this.remove(nodeToInsert);
     nodeToInsert.prev = node;
     nodeToInsert.next = node.next;
-    if (node.next === null){
+    if (node.next === null) {
       this.tail = nodeToInsert;
     } else {
       node.next.prev = nodeToInsert;
     }
     node.next = nodeToInsert;
   }
-  insertAtPostion(node, index) {}
-  removeNodeWithValue(value){
+  insertAtPostion(position, nodeToInsert) {
+    if (position === 1) {
+      this.setHead(nodeToInsert);
+      return;
+    }
     let node = this.head;
-    while (node !== null){
+    let currentPosition = 1;
+    while (node !== null && currentPosition++ !== position) node = node.next;
+    if (node !== null) {
+      this.insertBefore(node, nodeToInsert);
+    } else {
+      this.setTail(nodeToInsert);
+    }
+  }
+  removeNodeWithValue(value) {
+    let node = this.head;
+    while (node !== null) {
       const nodeToRemove = node;
       node = node.next;
-      if(nodeToRemove.value === value) this.remove(nodeToRemove);
+      if (nodeToRemove.value === value) this.remove(nodeToRemove);
     }
   }
   remove(node) {
@@ -70,7 +83,7 @@ class LinkedList {
     while (node !== null && node.value !== value) node = node.next;
     return node !== null;
   }
-  removeNodeBindings(node){
+  removeNodeBindings(node) {
     if (node.prev !== null) node.prev.next = node.next;
     if (node.next !== null) node.next.prev = node.prev;
     node.prev = null;
