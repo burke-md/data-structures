@@ -17,7 +17,7 @@ class LinkedList {
       this.tail = node;
       return;
     }
-    //Call insertBerfore here when code is complete.
+    this.insertBefore(this.head, node);
   }
   setTail(node) {
     if (!this.tail) {
