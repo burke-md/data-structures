@@ -24,7 +24,7 @@ class LinkedList {
       this.setHead(node);
       return;
     }
-    //Call insertAfter here when code is complete.
+    this.insertAfter(this.tail, node);
   }
   insertBefore(node, nodeToInsert) {
     if (nodeToInsert === this.head && nodeToInsert === this.tail) return;
