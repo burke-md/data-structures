@@ -11,7 +11,8 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
-  setHead(node) {
+
+    setHead(node) {
     if (!this.head) {
       this.head = node;
       this.tail = node;
@@ -51,7 +52,7 @@ class LinkedList {
     }
     node.next = nodeToInsert;
   }
-  insertAtPostion(position, nodeToInsert) {
+  insertAtPosition(position, nodeToInsert) {
     if (position === 1) {
       this.setHead(nodeToInsert);
       return;
@@ -65,7 +66,7 @@ class LinkedList {
       this.setTail(nodeToInsert);
     }
   }
-  removeNodeWithValue(value) {
+  removeNodesWithValue(value) {
     let node = this.head;
     while (node !== null) {
       const nodeToRemove = node;
