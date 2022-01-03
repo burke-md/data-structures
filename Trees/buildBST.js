@@ -11,6 +11,13 @@ class BST {
 
   }
   remove(value){
-    
+
+  }
+  getMinValue(){
+    if (this.left === null){
+      return this.value;
+    }else {
+      return this.left.getMinValue();
+    }
   }
 }
