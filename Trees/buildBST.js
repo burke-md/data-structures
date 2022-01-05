@@ -21,7 +21,23 @@ class BST {
     return this;
   }
 
-  contains(value) {}
+  contains(value) {
+    if (value < this.value){
+      if(!this.left){
+        return false;
+      } else {
+        return this.left.contains(value);
+      }
+    } else if (value > this.value){
+      if (!this.right){
+        return false;
+      } else {
+        return this.right.contains(value);
+      }
+    } else {
+      return true;
+    }
+  }
   remove(value) {}
   getMinValue() {
     if (this.left === null) {
