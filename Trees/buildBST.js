@@ -38,7 +38,11 @@ class BST {
       return true;
     }
   }
-  remove(value) {}
+  remove(value, parent = null) {
+    if (value < this.value){
+      
+    }
+  }
   getMinValue() {
     if (this.left === null) {
       return this.value;
