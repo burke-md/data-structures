@@ -40,7 +40,13 @@ class BST {
   }
   remove(value, parent = null) {
     if (value < this.value){
-      
+      if(this.left) {
+        this.left.remove(value, this)
+      }
+    } else if (value > this.value){
+      if (this.right){
+        this.right.remove(value, this)
+      }
     }
   }
   getMinValue() {
