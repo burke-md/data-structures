@@ -47,6 +47,13 @@ class BST {
       if (this.right){
         this.right.remove(value, this)
       }
+    } else {
+      if (this.left && this.right){
+        this.calue = this.right.getMinValue();
+        this.right.remove(this.value, this);
+      } else if (parent === null){
+
+      }
     }
   }
   getMinValue() {
