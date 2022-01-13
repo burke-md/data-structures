@@ -52,7 +52,11 @@ class BST {
         this.value = this.right.getMinValue();
         this.right.remove(this.value, this);
       } else if (parent === null){
-        //Complete this method
+        if(this.left){
+          this.value = this.left.value;
+          this.right = this.left.value;
+          this.left = this.left.left;
+        }
       }
     }
   }
