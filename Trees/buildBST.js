@@ -49,7 +49,7 @@ class BST {
       }
     } else {
       if (this.left && this.right){
-        this.calue = this.right.getMinValue();
+        this.value = this.right.getMinValue();
         this.right.remove(this.value, this);
       } else if (parent === null){
         //Complete this method
