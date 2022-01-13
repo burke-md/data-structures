@@ -52,7 +52,7 @@ class BST {
         this.calue = this.right.getMinValue();
         this.right.remove(this.value, this);
       } else if (parent === null){
-
+        //Complete this method
       }
     }
   }
