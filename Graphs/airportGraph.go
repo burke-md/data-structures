@@ -7,3 +7,8 @@ package main
 // TIME COMPLEXITY:
 
 // SPACE COMPLEXITY:
+
+func AirportConnections(airports []string, routes [][]string, startingAirport string) int {
+	
+	return -1
+}
