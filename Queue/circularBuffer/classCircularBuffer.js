@@ -20,11 +20,7 @@ class RingBuffer {
         let node = new BufferNode(value);
 
         if (this.isFull) {
-            const tmp = this.head.next;
-            this.head = node;
-            node.next = tmp;
-            console.log(`Buffer is full`);
-            return;
+            this.head = this.head.next;
         }
 
         if (!this.head) {
