@@ -37,6 +37,14 @@ class RingBuffer {
         if (this.currentSize == this.maxSize) this.isFull = true;
 
     }
+
+    display() {
+        let current = this.head;
+        while (current != null) {
+            console.log(`${current.value} \n ===`);
+            current = current.next;
+        }
+    }
 }
 
 // Populate buffer w/data and display
