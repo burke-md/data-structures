@@ -8,7 +8,7 @@ const addElement = (el) => {
     ringBuff.unshift(el);
 };
 
-// Populate buffer w/ data and display.
+// Populate buffer w/ data and display
 
 addElement(1);
 addElement(2);
@@ -21,5 +21,10 @@ console.log(`Ring buffer data: ${ringBuff}`);
 
 addElement(5);
 
-console.log(`Ring buffer data: ${ringBuff}`);
+console.log(`Ring buffer overflow data: ${ringBuff}`);
 
+// Remove element from buffer
+
+ringBuff.pop()
+
+console.log(`Ring buffer removed data: ${ringBuff}`);
