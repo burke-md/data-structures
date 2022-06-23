@@ -36,6 +36,12 @@ class RingBuffer {
 
     }
 
+    remove() {
+        const node = this.head;
+        this.head = this.head.next;
+        return node;
+    }
+
     displayAll() {
         let current = this.head;
         while (current != null) {
@@ -54,10 +60,16 @@ ringBuff.write(2);
 ringBuff.write(3);
 ringBuff.write(4);
 
+console.log(`Ring buffer data:`);
 ringBuff.displayAll();
 
 // Test buffer overflow condition
 
-console.log(`TEST OVERFLOW`); 
+console.log(`Ring buffer overflow data:`); 
 ringBuff.write(5); 
+ringBuff.displayAll();
+
+// Remove element from buffer
+
+console.log(`Removed data: ${ringBuff.remove().value}`);
 ringBuff.displayAll();
