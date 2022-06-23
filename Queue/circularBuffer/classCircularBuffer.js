@@ -20,7 +20,9 @@ class RingBuffer {
         let node = new BufferNode(value);
 
         if (this.isFull) {
-            //replace w/ overflow logic
+            const tmp = this.head.next;
+            this.head = node;
+            node.next = tmp;
             console.log(`Buffer is full`);
             return;
         }
@@ -41,7 +43,7 @@ class RingBuffer {
     displayAll() {
         let current = this.head;
         while (current != null) {
-            console.log(` ${current.value} \n ===`);
+            console.log(`${current.value}`);
             current = current.next;
         }
     }
@@ -60,6 +62,6 @@ ringBuff.displayAll();
 
 // Test buffer overflow condition
 
-ringBuff.write(5);
-
+console.log(`TEST OVERFLOW`); 
+ringBuff.write(5); 
 ringBuff.displayAll();
