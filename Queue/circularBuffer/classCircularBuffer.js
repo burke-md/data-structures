@@ -38,10 +38,10 @@ class RingBuffer {
 
     }
 
-    display() {
+    displayAll() {
         let current = this.head;
         while (current != null) {
-            console.log(`${current.value} \n ===`);
+            console.log(` ${current.value} \n ===`);
             current = current.next;
         }
     }
@@ -49,5 +49,17 @@ class RingBuffer {
 
 // Populate buffer w/data and display
 
+const ringBuff = new RingBuffer(4);
+
+ringBuff.write(1);
+ringBuff.write(2);
+ringBuff.write(3);
+ringBuff.write(4);
+
+ringBuff.displayAll();
 
 // Test buffer overflow condition
+
+ringBuff.write(5);
+
+ringBuff.displayAll();
